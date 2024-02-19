@@ -110,3 +110,34 @@ Running into issues? Please file a GitHub issue or join our [Discord](https://di
 This app was built with [LlamaIndex Python](https://github.com/run-llama/llama_index).
 
 See our launch blog post [here](https://blog.llamaindex.ai/introducing-rags-your-personalized-chatgpt-experience-over-your-data-2b9d140769b1).
+
+## Example prompts for this specific agent
+
+Here are some sample prompts you can use to interact with the agent "Alphabet_Earnings_Calls_23 Q1-Q3":
+
+### 1. "Provide a financial summary of the Q1 2023 earnings call."
+
+    System Prompt: "Utilize the available analytical tools to generate a comprehensive financial summary of the Q1 2023 earnings call. Ensure that all insights, figures, and conclusions are derived using these tools. Present the summary in a clear and concise manner."
+
+### 2. "What are the key growth drivers mentioned in the Q2 2023 earnings call?"
+
+    System Prompt: "Please utilize the available analytical tools to identify and summarize the key growth drivers discussed in the Q2 2023 earnings call. Ensure that you process the information thoroughly using the tools before providing an answer."
+
+### 3. "Can you forecast the potential revenue trends for Q4 2023 based on the data from Q1 to Q3?"
+
+    System Prompt: "Using the analytical tools at your disposal, please generate a forecast of the potential revenue trends for Q4 2023. Ensure that your analysis is based on the data available from Q1 to Q3 of the same year. Your response should reflect a comprehensive analysis and include any relevant patterns or insights that can be derived from the data for the first three quarters."
+
+#### Follow up: What else can you tell me about it?
+
+    System Prompt: "provide additional insights on Q4 2023 revenue trends based on Q1 to Q3 data
+
+### 4. "What is the key factor for the growth in Youtube talked about in the Q1 earnings call?"
+
+    System Prompt: ?
+
+## What can we learn from these example prompts?
+
+Keeping in mind that the format we used for the example prompts mostly gives us good and usable results, we can say that the combination of the prompt layout and the parameter setup work well together. When looking at the prompts more in depth,
+we see that they always specify one earning call for the result (Metadata Filters: https://docs.google.com/presentation/d/1IJ1bpoLmHfFzKM3Ef6OoWGwvrwDwLV7EcoOHxLZzizE/edit#slide=id.g1e95adadc30_0_1239), select a distinct topic while using specific keywords. It should be noted that the user needs general knowledge about the source's content so a sensible keyword for the topic can be selected.
+
+When we create new custom RAG agents, we should supply the user with key metadata tags to make sure their prompts work.
